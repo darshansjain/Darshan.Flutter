@@ -1,3 +1,4 @@
+import 'package:all_widget_app/Course.dart';
 import 'package:all_widget_app/OfflineCourses.dart';
 import 'package:all_widget_app/myCourses.dart';
 import 'package:all_widget_app/onlineCourses.dart';
@@ -141,37 +142,60 @@ class _HomePageState extends State<HomePage> {
                     Row(
                       children: [
                         SizedBox(
-                          height: h * 0.28,
+                          height: h * 0.33,
                           width: w,
                           child: ListView.builder(
                               scrollDirection: Axis.horizontal,
                               itemCount: crsList.length,
                               itemBuilder: (context, index) {
                                 return Container(
-                                    decoration: const BoxDecoration(
-                                      color: Colors.white,
-                                      borderRadius: BorderRadius.all(
-                                        Radius.circular(9.0),
-                                      ),
-                                      boxShadow: [
-                                        BoxShadow(
-                                          color: Color.fromARGB(
-                                              255, 189, 187, 187),
-                                          blurRadius: 10.0,
-                                          spreadRadius: 5.0,
-                                          offset: Offset(0.0,
-                                              4.0), // Adjust x and y for desired direction
-                                        ),
-                                      ],
+                                  width: 230.0,
+
+                                  decoration: const BoxDecoration(
+                                    color: Colors.white,
+                                    borderRadius: BorderRadius.all(
+                                      Radius.circular(9.0),
                                     ),
-                                    //height: 500,
-                                    margin: const EdgeInsets.all(20),
+                                    boxShadow: [
+                                      BoxShadow(
+                                        color:
+                                            Color.fromARGB(255, 189, 187, 187),
+                                        blurRadius: 5.0,
+                                        spreadRadius: 3.0,
+                                        offset: Offset(0.0,
+                                            3.0), // Adjust x and y for desired direction
+                                      ),
+                                    ],
+                                  ),
+                                  //height: 500,
+                                  margin: const EdgeInsets.all(20),
+                                  child: GestureDetector(
+                                    onTap: () {
+                                      setState(() {
+                                        Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: (context) =>
+                                                  Course(idx: index)),
+                                        );
+                                      });
+                                    },
                                     child: Column(
                                       children: [
-                                        Image.asset(
-                                          crsList[index],
-                                          height: 100,
-                                          fit: BoxFit.fill,
+                                        Container(
+                                          decoration: const BoxDecoration(
+                                            color: Colors.white,
+                                            borderRadius: BorderRadius.all(
+                                              Radius.circular(9.0),
+                                            ),
+                                          ),
+                                          child: Image.asset(
+                                            crsList[index],
+                                            //height: 100,
+                                            // width: 130,
+                                            fit: BoxFit
+                                                .cover, // To maintain aspect ratio
+                                          ),
                                         ),
                                         const SizedBox(
                                           height: 13,
@@ -205,7 +229,9 @@ class _HomePageState extends State<HomePage> {
                                               const TextStyle(fontSize: 15.0),
                                         ),
                                       ],
-                                    ));
+                                    ),
+                                  ),
+                                );
                               }),
                         )
                       ],
@@ -242,13 +268,14 @@ class _HomePageState extends State<HomePage> {
                     Row(
                       children: [
                         SizedBox(
-                          height: h * 0.29,
+                          height: h * 0.33,
                           width: w,
                           child: ListView.builder(
                               scrollDirection: Axis.horizontal,
                               itemCount: crsList.length,
                               itemBuilder: (context, index) {
                                 return Container(
+                                    width: 230,
                                     decoration: const BoxDecoration(
                                       color: Colors.white,
                                       borderRadius: BorderRadius.all(
@@ -258,10 +285,10 @@ class _HomePageState extends State<HomePage> {
                                         BoxShadow(
                                           color: Color.fromARGB(
                                               255, 189, 187, 187),
-                                          blurRadius: 10.0,
-                                          spreadRadius: 5.0,
+                                          blurRadius: 5.0,
+                                          spreadRadius: 3.0,
                                           offset: Offset(0.0,
-                                              4.0), // Adjust x and y for desired direction
+                                              3.0), // Adjust x and y for desired direction
                                         ),
                                       ],
                                     ),
@@ -271,7 +298,7 @@ class _HomePageState extends State<HomePage> {
                                       children: [
                                         Image.asset(
                                           crsList[index],
-                                          height: 100,
+                                          //height: 100,
                                           fit: BoxFit.cover,
                                         ),
                                         const SizedBox(
@@ -287,7 +314,7 @@ class _HomePageState extends State<HomePage> {
                                             backgroundColor: Colors
                                                 .blue, // Set the background color of the button
                                             minimumSize:
-                                                const Size(180.0, 50.0),
+                                                const Size(230.0, 48.0),
                                             shape: const RoundedRectangleBorder(
                                               borderRadius: BorderRadius.only(
                                                 topLeft: Radius.circular(20),
@@ -350,13 +377,14 @@ class _HomePageState extends State<HomePage> {
                     Row(
                       children: [
                         SizedBox(
-                          height: h * 0.3,
+                          height: h * 0.3349,
                           width: w,
                           child: ListView.builder(
                               scrollDirection: Axis.horizontal,
                               itemCount: crsList.length,
                               itemBuilder: (context, index) {
                                 return Container(
+                                    width: 230.0,
                                     decoration: const BoxDecoration(
                                       color: Colors.white,
                                       borderRadius: BorderRadius.all(
@@ -366,10 +394,10 @@ class _HomePageState extends State<HomePage> {
                                         BoxShadow(
                                           color: Color.fromARGB(
                                               255, 189, 187, 187),
-                                          blurRadius: 10.0,
-                                          spreadRadius: 5.0,
+                                          blurRadius: 5.0,
+                                          spreadRadius: 3.0,
                                           offset: Offset(0.0,
-                                              4.0), // Adjust x and y for desired direction
+                                              3.0), // Adjust x and y for desired direction
                                         ),
                                       ],
                                     ),
@@ -379,7 +407,7 @@ class _HomePageState extends State<HomePage> {
                                       children: [
                                         Image.asset(
                                           crsList[index],
-                                          height: 100,
+                                          // height: 100,
                                           fit: BoxFit.cover,
                                         ),
                                         const SizedBox(
@@ -398,7 +426,7 @@ class _HomePageState extends State<HomePage> {
                                                 .fromARGB(255, 96, 100,
                                                 104), // Set the background color of the button
                                             minimumSize:
-                                                const Size(180.0, 50.0),
+                                                const Size(230.0, 50.0),
                                             shape: const RoundedRectangleBorder(
                                               borderRadius: BorderRadius.only(
                                                 topLeft: Radius.circular(20),
